@@ -3,7 +3,9 @@ package nl.yc2209.skillapp.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,13 +27,24 @@ public class UserController {
 	}
 
 	@GetMapping
-	public List<User> getAllUser() {
+	public List<User> getAllUsers() {
 		return userService.getAllUsers();
 	}
-
+	
+	@GetMapping(value = "/{username}")
+	public void getSingleUser(@PathVariable("username") Long id) {
+		userService.getSingleUser(id);
+	}
+	
 	@PostMapping
 	public void createUser(@RequestBody User user) {
 		userService.addNewUser(user);
 	}
+	
+	@DeleteMapping(value = "/{id}")
+	public void deleteUser(@PathVariable("id") Long id) {
+		userService.deleteUser(id);
+	}
+	
 		
 }
