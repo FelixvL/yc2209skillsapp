@@ -25,7 +25,10 @@ int goalProgress;
 int subGoalProgress;
 boolean Expert;
 
-public User(int id, String name, String username, String email, String password, Date accountCreation, Date dob,
+public User() {
+}
+
+public User(long id, String name, String username, String email, String password, Date accountCreation, Date dob,
 		String location, int points, int goalProgress, int subGoalProgress, boolean expert) {
 	super();
 	this.id = id;
@@ -42,10 +45,10 @@ public User(int id, String name, String username, String email, String password,
 	Expert = expert;
 }
 
-public int getId() {
+public long getId() {
 	return id;
 }
-public void setId(int id) {
+public void setId(long id) {
 	this.id = id;
 }
 public String getName() {
