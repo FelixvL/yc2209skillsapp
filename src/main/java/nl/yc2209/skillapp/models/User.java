@@ -30,7 +30,6 @@ public User() {
 
 public User(long id, String name, String username, String email, String password, Date accountCreation, Date dob,
 		String location, int points, int goalProgress, int subGoalProgress, boolean expert) {
-	super();
 	this.id = id;
 	this.name = name;
 	this.username = username;
