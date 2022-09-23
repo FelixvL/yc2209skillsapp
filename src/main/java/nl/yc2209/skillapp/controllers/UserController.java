@@ -32,8 +32,8 @@ public class UserController {
 	}
 	
 	@GetMapping(value = "/{username}")
-	public void getSingleUser(@PathVariable("username") Long id) {
-		userService.getSingleUser(id);
+	public User getSingleUser(@PathVariable("username") Long id) {
+		return userService.getSingleUser(id).get();
 	}
 	
 	@PostMapping
