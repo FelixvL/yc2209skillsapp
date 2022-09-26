@@ -8,11 +8,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class SubGoalService {
 
-    private final SubGoalRepository subGoalRepository;
+    @Autowired
+    private SubGoalRepository subGoalRepository;
     //private final GroupRepository groupRepository;
 
     @Autowired
-    public SubGoalService()
+    public SubGoalService(){}
 
 
 
