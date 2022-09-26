@@ -64,12 +64,14 @@ public class UserService {
 	}
 
     public void assignGoalToUser(Long goalId, Long id) {
+		System.out.println("we gaan asignen");
 		var optionalUser = userRepository.findById(id);
 		var optionalGoal = goalRepository.findById(goalId);
 		if (optionalUser.isPresent() && optionalGoal.isPresent()) {
 			var user = optionalUser.get();
 			var goal = optionalGoal.get();
-			user.setGoal((List<Goal>) goal);
+//			user.setGoal((List<Goal>) goal);
+			user.getGoal().add(goal);
 			userRepository.save(user);
 		}
     }

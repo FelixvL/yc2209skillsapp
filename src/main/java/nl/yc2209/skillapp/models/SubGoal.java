@@ -28,6 +28,10 @@ public class SubGoal {
         this.points = points;
     }
 
+    public SubGoal() {
+
+    }
+
     public long getId() { // I excluded the setter for Ids get generated automatically
         return id;
     }

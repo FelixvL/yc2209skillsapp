@@ -1,7 +1,5 @@
 package nl.yc2209.skillapp.models;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.sql.Date;
 import java.util.List;
 
@@ -12,41 +10,23 @@ public class User {
 	
 @Id
 @GeneratedValue(strategy = GenerationType.AUTO)
-long id;
-String name;
-String username;
-String email;
-String password;
-Date accountCreation;
-Date dob;
-String location;
-int points;
-int goalProgress;
-int subGoalProgress;
-boolean Expert;
+private long id;
+private String name;
+private String username;
+private String email;
+private String password;
+private Date accountCreation;
+private Date dob;
+private String location;
+private int points;
+private int goalProgress;
+private int subGoalProgress;
+private boolean Expert;
 
-@OneToMany
+@ManyToMany
 List<Goal> goal;
 
 public User() {
-}
-
-public User(long id, String name, String username, String email, String password, Date accountCreation, Date dob,
-
-		String location, int points, int goalProgress, int subGoalProgress, boolean expert) {
-
-	this.id = id;
-	this.name = name;
-	this.username = username;
-	this.email = email;
-	this.password = password;
-	this.accountCreation = accountCreation;
-	this.dob = dob;
-	this.location = location;
-	this.points = points;
-	this.goalProgress = goalProgress;
-	this.subGoalProgress = subGoalProgress;
-	Expert = expert;
 }
 
 public long getId() {
