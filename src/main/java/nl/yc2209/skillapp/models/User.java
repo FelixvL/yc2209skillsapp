@@ -1,6 +1,9 @@
 package nl.yc2209.skillapp.models;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -22,8 +25,8 @@ int goalProgress;
 int subGoalProgress;
 boolean Expert;
 
-@OneToOne
-Goal goal;
+@OneToMany
+List<Goal> goal;
 
 public User() {
 }
@@ -119,11 +122,11 @@ public void setExpert(boolean expert) {
 	Expert = expert;
 }
 
-	public Goal getGoal() {
+	public List<Goal> getGoal() {
 		return goal;
 	}
 
-	public void setGoal(Goal goal) {
+	public void setGoal(List<Goal> goal) {
 		this.goal = goal;
 	}
 }

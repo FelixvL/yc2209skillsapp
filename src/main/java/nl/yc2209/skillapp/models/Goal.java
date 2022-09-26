@@ -1,9 +1,6 @@
 package nl.yc2209.skillapp.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Goal {
@@ -16,6 +13,9 @@ String category;
 String description;
 int totalPoints;
 //alt insert getters n setters
+
+@ManyToOne
+User user;
 
 public Goal() {
 }
@@ -66,4 +66,11 @@ public void setTotalPoints(){
 	this.totalPoints = totalPoints;
 }
 
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 }
