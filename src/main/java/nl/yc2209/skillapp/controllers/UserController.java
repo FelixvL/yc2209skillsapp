@@ -46,8 +46,7 @@ public class UserController {
 	}
 
 	@PutMapping("/{id}/{goalId}")
-	public void assignGoalToUser(@PathVariable("id") Long id, @PathVariable("goalId") Long goalId){
-
+	public void assignGoalToUser(@PathVariable("id") Long id, @PathVariable("goalId") Long goalId) {
 		userService.assignGoalToUser(goalId, id);
 	}
 		
