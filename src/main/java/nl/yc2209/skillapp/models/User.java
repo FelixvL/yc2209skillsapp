@@ -2,10 +2,7 @@ package nl.yc2209.skillapp.models;
 
 import java.sql.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class User {
@@ -24,6 +21,9 @@ int points;
 int goalProgress;
 int subGoalProgress;
 boolean Expert;
+
+@OneToOne
+Goal goal;
 
 public User() {
 }
@@ -117,7 +117,13 @@ public boolean isExpert() {
 }
 public void setExpert(boolean expert) {
 	Expert = expert;
-} 
+}
 
+	public Goal getGoal() {
+		return goal;
+	}
 
+	public void setGoal(Goal goal) {
+		this.goal = goal;
+	}
 }

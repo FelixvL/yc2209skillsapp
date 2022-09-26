@@ -39,6 +39,16 @@ public class UserController {
 	public void deleteUser(@PathVariable("id") Long id) {
 		userService.deleteUser(id);
 	}
-	
+
+	@PutMapping("/{id}")
+	public void updateUser(@PathVariable Long id,@RequestBody User user) {
+		userService.updateUser(id, user);
+	}
+
+	@PutMapping("/{id}/{goalId}")
+	public void assignGoalToUser(@PathVariable("id") Long id, @PathVariable("goalId") Long goalId){
+
+		userService.assignGoalToUser(goalId, id);
+	}
 		
 }
