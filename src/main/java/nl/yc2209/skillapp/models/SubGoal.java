@@ -25,6 +25,10 @@ public class SubGoal {
         this.points = points;
     }
 
+    public SubGoal() {
+
+    }
+
     public long getId() {
         return id;
     }
