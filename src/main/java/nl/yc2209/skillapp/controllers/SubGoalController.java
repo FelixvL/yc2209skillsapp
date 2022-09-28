@@ -1,9 +1,8 @@
 package nl.yc2209.skillapp.controllers;
 
 
-import nl.yc2209.skillapp.models.Goal;
+
 import nl.yc2209.skillapp.models.SubGoal;
-import nl.yc2209.skillapp.service.GoalService;
 import nl.yc2209.skillapp.service.SubGoalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

@@ -1,6 +1,5 @@
 package nl.yc2209.skillapp.models;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +16,7 @@ public class SubGoal {
     String description;
     int points;
 
+
     public SubGoal(long id, String nameOfSubGoal, String description, int points)
     {
         this.id = id;
@@ -31,6 +31,7 @@ public class SubGoal {
 
     public void setId(long id) {
         this.id = id;
+
     }
 
     public String getNameOfSubGoal() {
@@ -56,4 +57,6 @@ public class SubGoal {
     public void setPoints(int points) {
         this.points = points;
     }
+
+
 }
