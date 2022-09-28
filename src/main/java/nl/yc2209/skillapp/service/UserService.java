@@ -1,9 +1,11 @@
 package nl.yc2209.skillapp.service;
 
+
 import java.util.List;
 import java.util.Optional;
 
 import ExceptionHandler.RecordNotFoundException;
+import nl.yc2209.skillapp.models.Goal;
 import nl.yc2209.skillapp.repository.GoalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,38 +54,24 @@ public class UserService {
 		userRepository.deleteById(id);
 	}
 
-	public void updateUser(Long id, User user) {
+	public void updateUser(Long id, User newUser) {
 		Optional<User> optionalUser = userRepository.findById(id);
-		if (optionalUser.isEmpty()) {
-			throw new RecordNotFoundException("De gebruiker is niet gevonden");
+		if(optionalUser.isEmpty()) {
+			throw new RecordNotFoundException("userdata does not exist");
 		} else {
-
-			User user1 = optionalUser.get();
-
-			user1.setId(user.getId());
-			user1.setName(user.getName());
-			user1.setUsername(user.getUsername());
-			user1.setEmail(user.getEmail());
-			user1.setPassword(user.getPassword());
-			user1.setAccountCreation(user.getAccountCreation());
-			user1.setDob(user.getDob());
-			user1.setLocation(user.getLocation());
-			user1.setPoints(user.getPoints());
-			user1.setGoalProgress(user.getGoalProgress());
-			user1.setSubGoalProgress(user.getSubGoalProgress());
-			user1.setExpert(user.isExpert());
-
-			userRepository.save(user1);
+			userRepository.save(newUser);
 		}
 	}
 
     public void assignGoalToUser(Long goalId, Long id) {
+		System.out.println("we gaan asignen");
 		var optionalUser = userRepository.findById(id);
 		var optionalGoal = goalRepository.findById(goalId);
 		if (optionalUser.isPresent() && optionalGoal.isPresent()) {
 			var user = optionalUser.get();
 			var goal = optionalGoal.get();
-			user.setGoal(goal);
+//			user.setGoal((List<Goal>) goal);
+			user.getGoal().add(goal);
 			userRepository.save(user);
 		}
     }
