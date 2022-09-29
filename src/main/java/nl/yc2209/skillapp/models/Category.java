@@ -8,14 +8,13 @@ import javax.persistence.Id;
 
 @Entity
 public class Category {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    long id;
-    String categoryName;
+    private long id;
+    private String categoryName;
 
-    public Category(long id, String categoryName){
-        this.id = id;
-        this.categoryName = categoryName;
+    public Category(){
     }
 
     public long getId() {

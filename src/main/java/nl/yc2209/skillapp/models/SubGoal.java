@@ -12,17 +12,12 @@ public class SubGoal {
     @GeneratedValue(strategy = GenerationType.AUTO)
 
     long id;
-    String nameOfSubGoal;
-    String description;
-    int points;
+    private String nameOfSubGoal;
+    private String description;
+    private int points;
 
 
-    public SubGoal(long id, String nameOfSubGoal, String description, int points)
-    {
-        this.id = id;
-        this.nameOfSubGoal = nameOfSubGoal;
-        this.description = description;
-        this.points = points;
+    public SubGoal() {
     }
 
     public long getId() {
