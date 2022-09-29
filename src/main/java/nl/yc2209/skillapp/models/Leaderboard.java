@@ -11,11 +11,9 @@ public class Leaderboard {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    long id;
+    private long id;
 
-    public Leaderboard(long id)
-    {
-        this.id = id;
+    public Leaderboard() {
     }
 
     public long getId() {
