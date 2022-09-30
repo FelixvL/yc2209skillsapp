@@ -16,7 +16,9 @@ public class SubGoalController {
     private final SubGoalService subGoalService;
 
     @Autowired
-    public SubGoalController(SubGoalService subGoalService) {this.subGoalService = subGoalService;	}
+    public SubGoalController(SubGoalService subGoalService) {
+        this.subGoalService = subGoalService;
+    }
 
     @GetMapping
     public List<SubGoal> getAllSubGoal() {
