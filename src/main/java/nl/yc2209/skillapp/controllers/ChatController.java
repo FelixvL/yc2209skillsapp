@@ -12,6 +12,7 @@ import java.util.List;
 //We map the endpoint request with "/chats" at the end,
 //for any request that is related to the 'Chat' class
 
+
 public class ChatController {
     private ChatService chatService;
 
