@@ -1,6 +1,7 @@
 package nl.yc2209.skillapp.models;
 
-import java.sql.Date;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.*;
@@ -15,7 +16,7 @@ private String name;
 private String username;
 private String email;
 private String password;
-private Date accountCreation;
+private LocalDate accountCreation = LocalDate.now();
 private Date dob;
 private String location;
 private int points;
@@ -59,18 +60,10 @@ public String getPassword() {
 public void setPassword(String password) {
 	this.password = password;
 }
-public Date getAccountCreation() {
-	return accountCreation;
-}
-public void setAccountCreation(Date accountCreation) {
-	this.accountCreation = accountCreation;
-}
-public Date getDob() {
-	return dob;
-}
-public void setDob(Date dob) {
-	this.dob = dob;
-}
+public LocalDate getAccountCreation() {return accountCreation;}
+public void setAccountCreation(LocalDate accountCreation) {this.accountCreation = accountCreation;}
+public Date getDob() {return dob;}
+public void setDob(Date dob) {this.dob = dob;}
 public String getLocation() {
 	return location;
 }
