@@ -22,7 +22,7 @@ public class ChatController {
     }
 
     @GetMapping
-    public List<Chat> getAllChats(){
+    public List<Chat> getAllChat(){
         return chatService.getAllChats();
     }
 
