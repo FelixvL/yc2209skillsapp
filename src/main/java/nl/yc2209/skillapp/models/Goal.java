@@ -18,6 +18,9 @@ private int totalPoints;
 @ManyToMany
 List<User> user;
 
+@OneToMany
+List<SubGoal> subGoal;
+
 public Goal() {
 }
 
@@ -68,4 +71,9 @@ public Goal() {
 	public void setUser(List<User> user) {
 		this.user = user;
 	}
+
+	public List<SubGoal> getSubGoal() { return subGoal;}
+
+	public void setSubGoal(List<SubGoal> subGoal) {this.subGoal = subGoal;}
+
 }

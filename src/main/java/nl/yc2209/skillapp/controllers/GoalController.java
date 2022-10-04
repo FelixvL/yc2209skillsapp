@@ -3,11 +3,7 @@ package nl.yc2209.skillapp.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import nl.yc2209.skillapp.models.Goal;
 import nl.yc2209.skillapp.service.GoalService;
 
@@ -30,6 +26,11 @@ public class GoalController {
 	@PostMapping
 	public void createGoal(@RequestBody Goal goal) {
 		goalService.addNewGoal(goal);
+	}
+
+	@PutMapping("/{id}/{subGoalId}")
+	public void assignSubGoalToGoal(@PathVariable("id") Long id, @PathVariable("subGoalId") Long subGoalId) {
+		goalService.assignSubGoalToGoal(subGoalId, id);
 	}
 		
 }
