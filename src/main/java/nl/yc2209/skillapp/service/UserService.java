@@ -37,6 +37,11 @@ public class UserService {
 		Optional<User> user = userRepository.findById(id);
 		return user;
 	}
+
+//	public Optional<User> getUserByName(Long id) {
+//		Optional<User> userByName = userRepository.findById(id);
+//		return userByName;
+//	}
 	
 	public void addNewUser(User user) {		
 		Optional<User> userByEmail = userRepository.findUserByEmail(user.getEmail());
@@ -75,4 +80,5 @@ public class UserService {
 			userRepository.save(user);
 		}
     }
+
 }
