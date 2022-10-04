@@ -38,10 +38,10 @@ public class UserService {
 		return user;
 	}
 
-//	public Optional<User> getUserByName(Long id) {
-//		Optional<User> userByName = userRepository.findById(id);
-//		return userByName;
-//	}
+	public Optional<User> getUserByName(String username) {
+		Optional<User> user = userRepository.findUserByUsername(username);
+		return user;
+	}
 	
 	public void addNewUser(User user) {		
 		Optional<User> userByEmail = userRepository.findUserByEmail(user.getEmail());
