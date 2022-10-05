@@ -25,11 +25,16 @@ public class UserController {
 		return userService.getAllUsers();
 	}
 	
-	@GetMapping(value = "/{username}")
-	public User getSingleUser(@PathVariable("username") Long id) {
+	@GetMapping(value = "/id/{id}")
+	public User getSingleUser(@PathVariable("id") Long id) {
 		return userService.getSingleUser(id).get();
 	}
-	
+
+	@GetMapping(value = "/name/{username}")
+	public User getUserByUsername(@PathVariable("username") String username){
+		return userService.getUserByName(username).get();
+	}
+
 	@PostMapping
 	public void createUser(@RequestBody User user) {
 		userService.addNewUser(user);
