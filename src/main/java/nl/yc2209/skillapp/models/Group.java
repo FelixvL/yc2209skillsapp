@@ -8,34 +8,22 @@ import javax.persistence.Id;
 @Entity
 public class Group {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	Long id;
-	String groupName;
-	boolean goal;
-	boolean subGoal;
-	int points;
-	int maxAmountMembers;
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
+private Long id;
+private String groupName;
+private boolean goal;
+private boolean subGoal;
+private int points;
+private int maxAmountMembers;
 	
 	
-	public Group() {
-	}
-
-
-	public Group(Long id, String groupName, boolean goal, boolean subGoal, int points, int maxAmountMembers) {
-		this.id = id;
-		this.groupName = groupName;
-		this.goal = goal;
-		this.subGoal = subGoal;
-		this.points = points;
-		this.maxAmountMembers = maxAmountMembers;
-	}
-
+public Group() {
+}
 
 	public Long getId() {
 		return id;
 	}
-
 
 	public void setId(Long id) {
 		this.id = id;
@@ -69,7 +57,6 @@ public class Group {
 		return points;
 	}
 
-
 	public void setPoints(int points) {
 		this.points = points;
 	}
@@ -81,5 +68,4 @@ public class Group {
 	public void setMaxAmountMembers(int maxAmountMembers) {
 		this.maxAmountMembers = maxAmountMembers;
 	}
-	
 }
