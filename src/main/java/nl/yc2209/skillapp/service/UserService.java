@@ -64,6 +64,11 @@ public class UserService {
 		if(optionalUser.isEmpty()) {
 			throw new RecordNotFoundException("userdata does not exist");
 		} else {
+
+			User user1 = optionalUser.get();
+			user1.setId(user1.getId());
+			user1.setName(user1.getName());
+
 			userRepository.save(newUser);
 		}
 	}
