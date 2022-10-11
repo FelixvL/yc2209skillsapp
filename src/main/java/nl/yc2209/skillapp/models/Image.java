@@ -19,8 +19,7 @@ public class Image {
         @OneToOne
         private Goal goal;
 
-        public Image()
-        {
+        public Image() {
         }
 
         public Long getId() {
