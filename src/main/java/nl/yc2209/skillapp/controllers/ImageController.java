@@ -19,7 +19,7 @@ public class ImageController{
     @GetMapping
     public List<Image> getAllImages() {return imageService.getAllImages();}
 
-    @GetMapping(value = "{id}")
+    @GetMapping(value = "/{id}")
     public Image getSingleImage(@PathVariable("id") Long id) {return imageService.getSingleImage(id).get();}
 
     @PostMapping

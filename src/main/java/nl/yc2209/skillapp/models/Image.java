@@ -33,5 +33,13 @@ public class Image {
         public void setImageCode(String imageCode) {
             this.imageCode = imageCode;
         }
+
+    public Goal getGoal() {
+        return goal;
     }
+
+    public void setGoal(Goal goal) {
+        this.goal = goal;
+    }
+}
 
