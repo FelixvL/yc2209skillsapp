@@ -1,11 +1,7 @@
 package nl.yc2209.skillapp.models;
 
-import org.hibernate.annotations.Nationalized;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public class Image {
@@ -13,7 +9,7 @@ public class Image {
         @GeneratedValue
         private Long id;
 
-        @Nationalized
+    @Column(name = "image", unique = false, nullable = false, length = 100000)
         private String imageCode;
 
         @OneToOne
