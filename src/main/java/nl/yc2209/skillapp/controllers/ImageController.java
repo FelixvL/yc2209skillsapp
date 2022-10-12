@@ -25,6 +25,4 @@ public class ImageController{
     @PostMapping
     public void createImage(@RequestBody Image image) { imageService.addNewImage(image);}
 
-
-
 }
