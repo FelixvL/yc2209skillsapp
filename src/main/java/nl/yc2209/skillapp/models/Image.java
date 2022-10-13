@@ -12,9 +12,6 @@ public class Image {
     @Column(name = "image", unique = false, nullable = false, length = 100000)
         private String imageCode;
 
-        @OneToOne
-        private Goal goal;
-
         public Image() {
         }
 
@@ -34,12 +31,5 @@ public class Image {
             this.imageCode = imageCode;
         }
 
-    public Goal getGoal() {
-        return goal;
-    }
-
-    public void setGoal(Goal goal) {
-        this.goal = goal;
-    }
 }
 
