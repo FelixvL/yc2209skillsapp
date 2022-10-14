@@ -21,6 +21,10 @@ List<User> user;
 @OneToMany
 List<SubGoal> subGoal;
 
+@OneToOne
+private Image image;
+
+
 public Goal() {
 }
 
@@ -76,4 +80,11 @@ public Goal() {
 
 	public void setSubGoal(List<SubGoal> subGoal) {this.subGoal = subGoal;}
 
+	public Image getImage() {
+		return image;
+	}
+
+	public void setImage(Image image) {
+		this.image = image;
+	}
 }
