@@ -28,6 +28,11 @@ public class GoalController {
 		return goalService.getSingleGoal(id).get();
 	}
 
+	@DeleteMapping(value = "/{id}")
+	public void deleteGoal(@PathVariable("id") Long id) {
+		goalService.deleteGoal(id);
+	}
+
 	@PostMapping
 	public void createGoal(@RequestBody Goal goal) {
 		goalService.addNewGoal(goal);
