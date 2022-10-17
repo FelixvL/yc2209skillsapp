@@ -80,7 +80,6 @@ public class UserService {
 		if (optionalUser.isPresent() && optionalGoal.isPresent()) {
 			var user = optionalUser.get();
 			var goal = optionalGoal.get();
-//			user.setGoal((List<Goal>) goal);
 			user.getGoal().add(goal);
 			userRepository.save(user);
 		}
