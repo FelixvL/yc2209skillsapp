@@ -1,7 +1,10 @@
 package nl.yc2209.skillapp.service;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
+import ExceptionHandler.RecordNotFoundException;
 import nl.yc2209.skillapp.repository.SubGoalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,6 +38,15 @@ public class GoalService {
 		goalRepository.save(goal);
 	}
 
+	public Optional<Goal> getSingleGoal(Long id) {
+		boolean exists = goalRepository.existsById(id);
+		if (!exists) {
+			throw new RecordNotFoundException("Dit goal bestaat niet (meer)");
+		}
+		Optional<Goal> goal = goalRepository.findById(id);
+		return goal;
+	}
+
 
 	public void assignSubGoalToGoal(Long subGoalId, Long id) {
 		System.out.println("we gaan asignen");
@@ -48,5 +60,6 @@ public class GoalService {
 			goalRepository.save(goal);
 		}
 	}
+
 
 }
