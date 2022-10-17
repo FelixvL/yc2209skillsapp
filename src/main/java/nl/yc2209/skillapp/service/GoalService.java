@@ -47,6 +47,14 @@ public class GoalService {
 		return goal;
 	}
 
+	public void deleteGoal(Long id) {
+		boolean exists = goalRepository.existsById(id);
+		if (!exists) {
+			throw new RecordNotFoundException("Dit Goal is niet gevonden");
+		}
+		goalRepository.deleteById(id);
+	}
+
 
 	public void assignSubGoalToGoal(Long subGoalId, Long id) {
 		System.out.println("we gaan asignen");
