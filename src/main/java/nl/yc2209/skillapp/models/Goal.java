@@ -6,85 +6,91 @@ import java.util.List;
 @Entity
 public class Goal {
 
-@Id
-@GeneratedValue(strategy = GenerationType.AUTO) //suppose this generates a new ID each time obj is made
-private long id;
-private String nameOfGoal;
-private String category;
-private String description;
-private int totalPoints;
-//alt insert getters n setters
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+    private String nameOfGoal;
+    private String category;
 
-@ManyToMany
-List<User> user;
-
-@OneToMany
-List<SubGoal> subGoal;
-
-@OneToOne
-private Image image;
+    @Column(length = 2000)
+    private String description;
+    private int totalPoints;
 
 
-public Goal() {
-}
+    @ManyToMany
+    List<User> user;
 
-	public long getId() {
-		return id;
-	}
+    @OneToMany
+    List<SubGoal> subGoal;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    @OneToOne
+    private Image image;
 
-	public String getNameOfGoal() {
-		return nameOfGoal;
-	}
 
-	public void setNameOfGoal(String nameOfGoal) {
-		this.nameOfGoal = nameOfGoal;
-	}
+    public Goal() {
+    }
 
-	public String getCategory() {
-		return category;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setCategory(String category) {
-		this.category = category;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public String getNameOfGoal() {
+        return nameOfGoal;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setNameOfGoal(String nameOfGoal) {
+        this.nameOfGoal = nameOfGoal;
+    }
 
-	public int getTotalPoints() {
-		return totalPoints;
-	}
+    public String getCategory() {
+        return category;
+    }
 
-	public void setTotalPoints(int totalPoints) {
-		this.totalPoints = totalPoints;
-	}
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
-	public List<User> getUser() {
-		return user;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setUser(List<User> user) {
-		this.user = user;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public List<SubGoal> getSubGoal() { return subGoal;}
+    public int getTotalPoints() {
+        return totalPoints;
+    }
 
-	public void setSubGoal(List<SubGoal> subGoal) {this.subGoal = subGoal;}
+    public void setTotalPoints(int totalPoints) {
+        this.totalPoints = totalPoints;
+    }
 
-	public Image getImage() {
-		return image;
-	}
+    public List<User> getUser() {
+        return user;
+    }
 
-	public void setImage(Image image) {
-		this.image = image;
-	}
+    public void setUser(List<User> user) {
+        this.user = user;
+    }
+
+    public List<SubGoal> getSubGoal() {
+        return subGoal;
+    }
+
+    public void setSubGoal(List<SubGoal> subGoal) {
+        this.subGoal = subGoal;
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
+    }
 }

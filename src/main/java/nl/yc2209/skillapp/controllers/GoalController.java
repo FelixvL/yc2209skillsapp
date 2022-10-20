@@ -30,11 +30,13 @@ public class GoalController {
 
 	@DeleteMapping(value = "/{id}")
 	public void deleteGoal(@PathVariable("id") Long id) {
+		System.out.println("delete goal");
 		goalService.deleteGoal(id);
 	}
 
 	@PostMapping
 	public void createGoal(@RequestBody Goal goal) {
+		System.out.println("go " + goal);
 		goalService.addNewGoal(goal);
 	}
 
@@ -42,5 +44,7 @@ public class GoalController {
 	public void assignSubGoalToGoal(@PathVariable("id") Long id, @PathVariable("subGoalId") Long subGoalId) {
 		goalService.assignSubGoalToGoal(subGoalId, id);
 	}
+
+
 		
 }
