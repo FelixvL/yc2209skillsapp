@@ -48,8 +48,8 @@ public class GoalService {
 	}
 
 	public void deleteGoal(Long id) {
-		boolean exists = goalRepository.existsById(id);
-		if (!exists) {
+		boolean bestaat = goalRepository.existsById(id);
+		if (!bestaat) {
 			throw new RecordNotFoundException("Dit Goal is niet gevonden");
 		}
 		goalRepository.deleteById(id);

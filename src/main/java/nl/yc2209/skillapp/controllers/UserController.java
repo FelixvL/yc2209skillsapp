@@ -54,5 +54,10 @@ public class UserController {
 	public void assignGoalToUser(@PathVariable("id") Long id, @PathVariable("goalId") Long goalId) {
 		userService.assignGoalToUser(goalId, id);
 	}
+
+	@DeleteMapping("/{id}/{goalId}")
+	public void deAssignGoalToUser(@PathVariable("id") Long id, @PathVariable("goalId") Long goalId) {
+		userService.deAssignGoalToUser(goalId, id);
+	}
 		
 }
