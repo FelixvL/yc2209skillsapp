@@ -10,16 +10,12 @@ public class SubGoal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     long id;
-    private int numberOfSubGoal;
+    private String SubGoalCounter;
     private String nameOfSubGoal;
     private String description;
     private int points;
 
-
-    public SubGoal() {
-    }
 
     public long getId() {
         return id;
@@ -27,15 +23,14 @@ public class SubGoal {
 
     public void setId(long id) {
         this.id = id;
-
     }
 
-    public int getNumberOfSubGoal() {
-        return numberOfSubGoal;
+    public String getSubGoalCounter() {
+        return SubGoalCounter;
     }
 
-    public void setNumberOfSubGoal(int numberOfSubGoal) {
-        this.numberOfSubGoal = numberOfSubGoal;
+    public void setSubGoalCounter(String subGoalCounter) {
+        SubGoalCounter = subGoalCounter;
     }
 
     public String getNameOfSubGoal() {
@@ -61,6 +56,4 @@ public class SubGoal {
     public void setPoints(int points) {
         this.points = points;
     }
-
-
 }
