@@ -45,6 +45,9 @@ public class GoalController {
 		goalService.assignSubGoalToGoal(subGoalId, id);
 	}
 
-
+	@DeleteMapping("/{id}/{SubGoalId}")
+	public void deAssignSubGoalToGoal(@PathVariable("id") Long id, @PathVariable("SubGoalId") Long goalId) {
+		goalService.deAssignSubGoalToGoal(goalId, id);
+	}
 		
 }
