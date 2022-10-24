@@ -20,7 +20,7 @@ public class Goal {
     @ManyToMany
     List<User> user;
 
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     List<SubGoal> subGoal;
 
     @OneToOne

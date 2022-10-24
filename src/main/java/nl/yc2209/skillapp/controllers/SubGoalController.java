@@ -26,8 +26,7 @@ public class SubGoalController {
     }
 
     @PostMapping
-    public void createSubGoal(@RequestBody SubGoal subGoal) {
-        System.out.println("go " + subGoal);
-        subGoalService.addNewSubGoal(subGoal);
+    public Long createSubGoal(@RequestBody SubGoal subGoal) {
+        return subGoalService.addNewSubGoal(subGoal);
     }
 }

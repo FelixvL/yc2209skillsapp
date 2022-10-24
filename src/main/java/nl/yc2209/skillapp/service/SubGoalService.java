@@ -21,7 +21,8 @@ public class SubGoalService {
         return subGoalRepository.findAll();
     }
 
-    public void addNewSubGoal(SubGoal subGoal) {
-        subGoalRepository.save(subGoal);
+    public Long addNewSubGoal(SubGoal subGoal) {
+        SubGoal subGoaldb = subGoalRepository.save(subGoal);
+        return subGoaldb.getId();
     }
 }

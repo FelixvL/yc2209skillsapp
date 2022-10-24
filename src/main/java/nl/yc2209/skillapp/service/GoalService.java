@@ -63,11 +63,25 @@ public class GoalService {
 		if (optionalGoal.isPresent() && optionalSubGoal.isPresent()) {
 			var goal = optionalGoal.get();
 			var subGoal = optionalSubGoal.get();
-//			user.setGoal((List<Goal>) goal);
 			goal.getSubGoal().add(subGoal);
 			goalRepository.save(goal);
 		}
 	}
+
+	public void deAssignSubGoalToGoal(Long subGoalId, Long id) {
+		System.out.println("we gaan asignen");
+		var optionalGoal = goalRepository.findById(id);
+		var optionalSubGoal = subGoalRepository.findById(subGoalId);
+		if (optionalGoal.isPresent() && optionalSubGoal.isPresent()) {
+			var goal = optionalGoal.get();
+			var subGoal = optionalSubGoal.get();
+
+			goal.getSubGoal().remove(subGoal);
+			goalRepository.save(goal);
+		}
+	}
+
+
 
 
 }
