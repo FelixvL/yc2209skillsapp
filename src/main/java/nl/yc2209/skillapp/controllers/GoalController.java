@@ -13,41 +13,43 @@ import nl.yc2209.skillapp.service.GoalService;
 @RequestMapping(value = "goals")
 public class GoalController {
 
-	private final GoalService goalService; //geeft has-a relatie aan
+    private final GoalService goalService;
 
-	@Autowired
-	public GoalController(GoalService goalService) {this.goalService = goalService;	}
+    @Autowired
+    public GoalController(GoalService goalService) {
+        this.goalService = goalService;
+    }
 
-	@GetMapping
-	public List<Goal> getAllGoal() {
-		return goalService.getAllGoals(); //waarom is het in de service functie meervoud en in de functie van deze controller niet?
-	}
+    @GetMapping
+    public List<Goal> getAllGoal() {
+        return goalService.getAllGoals();
+    }
 
-	@GetMapping(value = "/id/{id}")
-	public Goal getSingleGoal(@PathVariable("id") Long id) {
-		return goalService.getSingleGoal(id).get();
-	}
+    @GetMapping(value = "/id/{id}")
+    public Goal getSingleGoal(@PathVariable("id") Long id) {
+        return goalService.getSingleGoal(id).get();
+    }
 
-	@DeleteMapping(value = "/{id}")
-	public void deleteGoal(@PathVariable("id") Long id) {
-		System.out.println("delete goal");
-		goalService.deleteGoal(id);
-	}
+    @DeleteMapping(value = "/{id}")
+    public void deleteGoal(@PathVariable("id") Long id) {
+        System.out.println("delete goal");
+        goalService.deleteGoal(id);
+    }
 
-	@PostMapping
-	public void createGoal(@RequestBody Goal goal) {
-		System.out.println("go " + goal);
-		goalService.addNewGoal(goal);
-	}
+    @PostMapping
+    public void createGoal(@RequestBody Goal goal) {
+        System.out.println("go " + goal);
+        goalService.addNewGoal(goal);
+    }
 
-	@PutMapping("/{id}/{subGoalId}")
-	public void assignSubGoalToGoal(@PathVariable("id") Long id, @PathVariable("subGoalId") Long subGoalId) {
-		goalService.assignSubGoalToGoal(subGoalId, id);
-	}
+    @PutMapping("/{id}/{subGoalId}")
+    public void assignSubGoalToGoal(@PathVariable("id") Long id, @PathVariable("subGoalId") Long subGoalId) {
+        goalService.assignSubGoalToGoal(subGoalId, id);
+    }
 
-	@DeleteMapping("/{id}/{SubGoalId}")
-	public void deAssignSubGoalToGoal(@PathVariable("id") Long id, @PathVariable("SubGoalId") Long goalId) {
-		goalService.deAssignSubGoalToGoal(goalId, id);
-	}
-		
+    @DeleteMapping("/{id}/{SubGoalId}")
+    public void deAssignSubGoalToGoal(@PathVariable("id") Long id, @PathVariable("SubGoalId") Long goalId) {
+        goalService.deAssignSubGoalToGoal(goalId, id);
+    }
+
 }
